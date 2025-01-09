@@ -1,0 +1,276 @@
+/* Reset and base styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
+
+/* Main container */
+.lwc-container {
+    width: 95%;
+    max-width: 800px;
+    margin: 8px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+/* Calendar Header */
+.lwc-header {
+    margin-bottom: 12px;
+}
+
+.lwc-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.lwc-nav h1 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.lwc-nav-btn {
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    color: #666;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.lwc-nav-btn:hover {
+    background: #f5f5f5;
+    color: #1a1a1a;
+}
+
+/* Calendar Grid */
+.lwc-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.lwc-weekday {
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    padding: 4px;
+}
+
+.lwc-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    height: auto;
+}
+
+.lwc-day {
+    position: relative;
+    padding-bottom: 100%;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.lwc-day-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+/* Day States - with !important flags to ensure styles are applied */
+.lwc-day.weekend {
+    background: #f0f0f0 !important;
+}
+
+.lwc-day.holiday {
+    background: #e8f5e9 !important;
+    border-color: #4CAF50 !important;
+}
+
+.lwc-day.suggested {
+    background: #fff3e0 !important;
+    border-color: #FFC107 !important;
+}
+
+.lwc-day.other-month {
+    opacity: 0.3;
+}
+
+.lwc-day.today {
+    border: 2px solid #2196F3 !important;
+}
+
+/* Long Weekend Highlight - restored original styling */
+.lwc-long-weekend {
+    outline: 2px solid #FF5722 !important;
+    outline-offset: -2px !important;
+    border-radius: 4px !important;
+}
+
+.lwc-day-number {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.lwc-event {
+    font-size: 0.6rem;
+    color: #666;
+    margin-top: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Details Popup */
+.lwc-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 12px;
+    z-index: 1000;
+    width: 220px;
+    max-width: 90vw;
+    border: 1px solid #ddd;
+}
+
+.lwc-details h4 {
+    margin: 0 0 6px;
+    color: #1a1a1a;
+    font-size: 0.8rem;
+}
+
+.lwc-details p {
+    margin: 0;
+    font-size: 0.7rem;
+    color: #666;
+}
+
+/* Legend */
+.lwc-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 8px 0;
+}
+
+.lwc-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.7rem;
+}
+
+.lwc-legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+/* Legend Colors - restored original colors */
+.lwc-legend-color.weekend {
+    background: #f0f0f0 !important;
+    border: 1px solid #ddd !important;
+}
+
+.lwc-legend-color.holiday {
+    background: #e8f5e9 !important;
+    border: 1px solid #4CAF50 !important;
+}
+
+.lwc-legend-color.suggested {
+    background: #fff3e0 !important;
+    border: 1px solid #FFC107 !important;
+}
+
+.lwc-legend-color.long-weekend {
+    border: 2px solid #FF5722 !important;
+    background: white !important;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .lwc-container {
+        width: 98%;
+        margin: 4px auto;
+        padding: 8px;
+    }
+
+    .lwc-legend {
+        gap: 8px;
+    }
+
+    .lwc-day-content {
+        padding: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lwc-container {
+        padding: 4px;
+    }
+
+    .lwc-nav h1 {
+        font-size: 0.9rem;
+    }
+
+    .lwc-day-number {
+        font-size: 0.65rem;
+    }
+
+    .lwc-event {
+        font-size: 0.5rem;
+    }
+}

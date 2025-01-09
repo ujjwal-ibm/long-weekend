@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long Weekend Calculator</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <meta name="description" content="Calculate and plan your long weekends based on holidays and weekends">
+    <meta name="keywords" content="long weekend, holiday planner, weekend calculator">
+    
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJESURBVFiF7ZdPSBRhGMZ/MysRUkFBhwi6dAg6GHXo0KWgoCCQPERBUB06dA46BXXo0KFDBx0kEExwRRbE/9ju6urqrq6u6+q6urr+WV11N3e3tA5d+nSYHdeZcd11Z0Soj32/ef/M+8w87/fO+34fHDly5Mih0xGx0kn/D+4BV4AzwABwHxgGNFZGqGqM/+qM2RnTxqwxPWZ9xnEVeA3MAu+AD0Dr9gDVuTVd0xPTCbW1jbWFa8+vXQYOAxeA08BxwA+cBHqBD8CnrAGaXc2yElmR6VAaiWiEhY2Fz0BTtpe/CnwE5oFxYAKYAb4C34EfwE8gDISAn0AQCADBjArGGcNn81EZrqQqXMXD0EPc8+6nQBNwZs8OVOgV0rBpIN/Mp1gvZtg5TLox/QnXvJnSMprESri1aiPrHNW7G9m0baLRGAXmAnrtXvr1fvaZ9tFv7qfP1EevsZceQw+P9Y95pHvEQ91DHugecF93n7u6u/Tqu+nSddGp7aRD00G7pp02TRut6lZaVK00q5ppUjXxTvmON8o3NCob0abq2FYxGo3JHZMTSxOv51/jnHXinHNinbVimbHweO4xj2YfUTtZS81kDVXBKipDlZQHyykLllEyUUJxoJiiQBGFgUIK/AXk+/MxB8xUhCqoClXxZPYJj2Ye4ZhxYJ+2Y5uyYZm0YJowY/QbMfrS0+u6Sz4LAE3AMWAf4ANMQBFQDJQCZUAFUAnUAPXAIeAi0Ay0AG3AOeA8cBG4vMOTI0eO/xF/AAnGnVc6857VAAAAAElFTkSuQmCC">
+
+    <meta property="og:title" content="Long Weekend Calculator">
+    <meta property="og:description" content="Plan your long weekends efficiently with our calculator">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <header class="lwc-site-header">
+        <h1>Long Weekend Calculator</h1>
+        <p>Plan your extended breaks by finding the perfect long weekends</p>
+    </header>
+
+    <main>
+        <div class="lwc-legend">
+            <div class="lwc-legend-item">
+                <span class="lwc-legend-color weekend"></span>
+                <span>Weekend</span>
+            </div>
+            <div class="lwc-legend-item">
+                <span class="lwc-legend-color holiday"></span>
+                <span>Holiday</span>
+            </div>
+            <div class="lwc-legend-item">
+                <span class="lwc-legend-color suggested"></span>
+                <span>Suggested Day Off</span>
+            </div>
+        </div>
+
+        <div class="long-weekend-container"></div>
+    </main>
+
+    <footer class="lwc-site-footer">
+        <p>
+            Long Weekend Calculator helps you plan your holidays efficiently. 
+            Find the perfect days to take off and maximize your breaks!
+        </p>
+        <p class="lwc-footer-links">
+            <a href="https://github.com/ujjwal-ibm/long-weekend" target="_blank">View on GitHub</a>
+        </p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
